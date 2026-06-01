@@ -1,7 +1,6 @@
 // --- CONFIGURACIÓN DE TU EVENTO ---
 const FECHA_CUMPLE = new Date("Jun 27, 2026 21:30:00").getTime(); // Cambia la fecha de tu fiesta aquí
-const TELEFONO_WA = "5491123456789"; // Reemplaza con tu código de país y número (Ej: 549 para Argentina + número)
-const MENSAJE_WA = "¡Hola! Confirmo mi asistencia a tu fiesta de cumpleaños. ¡Ahí estaré! 🎉";
+const TELEFONO_WA = "5493885846141"; // Reemplaza con tu código de país y número (Ej: 549 para Argentina + número)
 
 // --- EVENTO AL ABRIR LA INVITACIÓN ---
 document.getElementById('btn-abrir').addEventListener('click', () => {
@@ -49,10 +48,6 @@ const x = setInterval(() => {
         document.getElementById("segundos").innerText = "00";
     }
 }, 1000);
-
-// --- CONFIGURACIÓN DEL BOTÓN DE WHATSAPP ---
-const urlWhatsApp = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(MENSAJE_WA)}`;
-document.getElementById('btn-whatsapp').href = urlWhatsApp;
 
 // --- EFECTO CONFETI (Librería canvas-confetti) ---
 function lanzarConfeti() {
@@ -114,3 +109,26 @@ function copiarAlias() {
         console.error('Error al copiar: ', err);
     });
 }
+
+// --- CONTROLADOR DE CONFIRMACIÓN DINÁMICA DE WHATSAPP ---
+document.getElementById('btn-whatsapp').addEventListener('click', function(evento) {
+    // Capturamos lo que escribió el usuario y limpiamos espacios vacíos
+    const nombreInput = document.getElementById('nombre-invitado').value.trim();
+
+    // Validación: Si no escribió nada, le avisamos y frenamos el envío
+    if (nombreInput === "") {
+        evento.preventDefault(); // Evita que se abra WhatsApp vacío
+        alert("Por favor, escribe tu nombre antes de confirmar asistencia. 🙏");
+        document.getElementById('nombre-invitado').focus();
+        return;
+    }
+
+    // Creamos el mensaje personalizado con el nombre del invitado
+    const mensajePersonalizado = `¡Hola! Confirmo mi asistencia a tu fiesta de cumpleaños. ¡Ahí estaré! ${nombreInput} 🎉`;
+    
+    // Generamos la URL final en tiempo real
+    const urlFinal = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(mensajePersonalizado)}`;
+    
+    // Asignamos la dirección al botón para que continúe su viaje a WhatsApp
+    this.href = urlFinal;
+});
