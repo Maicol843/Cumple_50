@@ -124,7 +124,7 @@ document.getElementById('btn-whatsapp').addEventListener('click', function(event
     }
 
     // Creamos el mensaje personalizado con el nombre del invitado
-    const mensajePersonalizado = `¡Hola! Confirmo mi asistencia a tu fiesta de cumpleaños. ¡Ahí estaré! ${nombreInput} 🎉`;
+    const mensajePersonalizado = `¡Hola! Confirmo mi asistencia a tu fiesta de cumpleaños. ¡Ahí estaré! ${nombreInput}`;
     
     // Generamos la URL final en tiempo real
     const urlFinal = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(mensajePersonalizado)}`;
