@@ -1,6 +1,6 @@
-# 🎂 Tarjeta de Invitación Digital Interactiva - Cumple de 50 (Mario & Cris)
+# 🎂 Tarjeta de Invitación Digital Interactiva - Cumple de 50 (Mario)
 
-¡Bienvenido/a al repositorio de la tarjeta digital de invitación para el cumpleaños de 50 de Mario & Cris! Este proyecto es una invitación web interactiva, moderna y **optimizada exclusivamente para dispositivos móviles**, diseñada para ofrecer una experiencia fluida y festiva a los invitados.
+¡Bienvenido/a al repositorio de la tarjeta digital de invitación para el cumpleaños de 50 de Mario! Este proyecto es una invitación web interactiva, moderna y **optimizada exclusivamente para dispositivos móviles**, diseñada para ofrecer una experiencia fluida y festiva a los invitados.
 
 🎯 **Demo en Vivo:** [Ver Invitación en GitHub Pages](https://maicol843.github.io/Cumple_50/)
 
@@ -63,7 +63,7 @@ const TELEFONO_WA = "5493885846141"; // Código de país + número
 ```
 
 2. Datos de Transferencia (en index.html): Modificar el bloque de la clase .pago con el nombre y alias correspondientes.
-3. Música de Fondo: Reemplazar el archivo en la ruta sound/Boquita de coral.MP3 manteniendo la etiqueta <audio>.
+3. Música de Fondo: Reemplazar el archivo en la ruta sound/El_maestro.MP3 manteniendo la etiqueta <audio>.
 
 ---
 
